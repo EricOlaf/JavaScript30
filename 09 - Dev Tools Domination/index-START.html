@@ -17,29 +17,71 @@
       p.style.fontSize = '50px';
     }
 
+    const p = document.querySelector('p');
+
     // Regular
 
     // Interpolated
+    console.log('hello I am a %s string', '💩')
 
     // Styled
+    console.log('%c Hello World', 'font-size:40px; background:grey; color:yellow;')
 
     // warning!
+    console.warn('OH CRAPPPP!!!')
 
     // Error :|
+    console.error('☠️☠️☠️ FIX ME!!!')
 
     // Info
+    console.info('more peple die by cow attack than shark attacks each year.')
 
     // Testing
+    console.assert(1 === 1, 'your guess was wrong!!!')
+    console.assert(1 === 2, 'your guess was wrong!!!')
+    //Only displays if the answer is actually wrong.
 
     // clearing
+    //console.clear(); //clears everything from the console.
 
     // Viewing DOM Elements
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog=>{
+      //You can use just group and items won't be collapsed initially. 
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`This is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} years old.`)
+      console.log(`${dog.name} is ${dog.age * 7} in dog years.`)
+      console.groupEnd(`${dog.name}`)
+    })
 
     // counting
+    console.count('Eric');
+    console.count('Eric');
+    console.count('Eric');
+    console.count('Eric');
+    console.count('Seth');
+    console.count('Seth');
+    console.count('Seth');
+    console.count('Eric');
+    console.count('Eric');
+    console.count('Eric');
+    console.count('Seth');
+    console.count('Seth');
 
     // timing
+    console.time('fetching Luke')
+    fetch('https://swapi.co/api/people/1')
+      .then(res=> res.json())
+      .then(data=>{
+        console.timeEnd('fetching Luke')
+        console.log(data)
+        })
+
+    // table
+    console.table(dogs);
 
   </script>
 </body>
