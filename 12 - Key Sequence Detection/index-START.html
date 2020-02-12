@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+  
+  const secret = "ericolaf"
+  const codeArr = []
+  window.addEventListener('keyup', (e)=>{
+    codeArr.push(e.key)
+    codeArr.splice(-codeArr.length-1, codeArr.length - secret.length)
+    if(codeArr.join('') === secret){
+      console.log("WINNER!!!!💪🏻")
+      cornify_add()
+      const h1 = document.createElement("h1")
+      h1.innerText = "NAILED IT!!!"
+      document.body.appendChild(h1)
+    }
+  })
 </script>
 </body>
 </html>
