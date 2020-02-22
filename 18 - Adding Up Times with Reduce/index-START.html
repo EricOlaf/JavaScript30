@@ -182,6 +182,21 @@
     </li>
   </ul>
 <script>
+  const nodes = [...document.querySelectorAll('.videos > li')];
+  let totalTime = nodes.reduce((acc, el)=>{
+    const time = el.dataset.time;
+    const [min, sec] = time.split(":");
+    const convMin = parseInt(min) / 60 ;
+    const convSec = parseInt(sec) / 60 / 60;
+    const tot = convMin + convSec;
+    return acc + tot;
+  }, 0)
+
+let [hours, mins] = totalTime.toString().split('.');
+mins = (parseInt(mins) * 0.6).toString().substring(0, 2);
+console.log(mins);
+
+  console.log(`${hours}:${mins}`)
 </script>
 </body>
 </html>
